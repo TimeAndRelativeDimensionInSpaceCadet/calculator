@@ -1,0 +1,13 @@
+.buttonPanelContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    & .buttonPanel {
+        padding-block-start: 5%;
+        block-size: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1fr);
+        gap: 2px;
+    }
+}

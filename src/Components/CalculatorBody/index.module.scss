@@ -1,0 +1,10 @@
+.calcBody {
+  inline-size: 300px;
+  max-inline-size: 100%;
+  block-size: 450px;
+  max-block-size: 100%;
+  background-color: rgb(28, 27, 29);
+  display: flex;
+  flex-flow: column;
+  box-shadow: 0 0 12px grey;
+}
