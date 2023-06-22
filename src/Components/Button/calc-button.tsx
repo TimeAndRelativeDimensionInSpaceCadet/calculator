@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Command } from '../../Interfaces/command';
-import styles from './index.module.scss';
+import styles from './calc-button.module.scss';
 
 export type CalculatorButtonProps = {
   text: string;
@@ -9,6 +9,7 @@ export type CalculatorButtonProps = {
 export const CalculatorButton: FunctionComponent<CalculatorButtonProps> = ({
   text,
   command,
+  
 }) => {
   const handleCommand = (): void => {
     command.execute();

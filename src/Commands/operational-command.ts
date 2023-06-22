@@ -1,9 +1,9 @@
 import { Command } from "../Interfaces/command";
 
 export class OperationalCommand implements Command {
-    private numberPayload: number;
-    constructor(payload: number){
-        this.numberPayload = payload;
+    private operatorPayload: string;
+    constructor(payload: string, handler: Function){
+        this.operatorPayload = payload;
     }
     execute(){
 

@@ -1,44 +1,68 @@
-import { NumericalCommand } from '../../Commands/numerical-command';
 
 export const basicLayout = [
   {
     text: '7',
-    command: new NumericalCommand(7),
+    commandType: 'number',
   },
   {
     text: '8',
-    command: new NumericalCommand(8),
+    commandType: 'number',
   },
   {
     text: '9',
-    command: new NumericalCommand(9),
+    commandType: 'number',
+  },
+  {
+    text: 'x',
+    commandType: 'operator',
   },
   {
     text: '4',
-    command: new NumericalCommand(4),
+    commandType: 'number',
   },
   {
     text: '5',
-    command: new NumericalCommand(5),
+    commandType: 'number',
   },
   {
     text: '6',
-    command: new NumericalCommand(6),
+    commandType: 'number',
+  },
+  {
+    text: '-',
+    commandType: 'number',
   },
   {
     text: '1',
-    command: new NumericalCommand(1),
+    commandType: 'number',
   },
   {
     text: '2',
-    command: new NumericalCommand(2),
+    commandType: 'number',
   },
   {
     text: '3',
-    command: new NumericalCommand(3),
+    commandType: 'number',
+  },
+  {
+    text: '+',
+    commandType: 'operator',
+  },
+  {
+    text: '+/-',
+    commandType: 'modifier',
   },
   {
     text: '0',
-    command: new NumericalCommand(0),
+    commandType: 'number',
+    
+  },
+  {
+    text: '.',
+    commandType: 'number',
+  },
+  {
+    text: '=',
+    commandType: 'operator',
   },
 ];

@@ -1,9 +1,9 @@
 import { Command } from "../Interfaces/command";
 
 export class ModifierCommand implements Command {
-    private numberPayload: number;
-    constructor(payload: number){
-        this.numberPayload = payload;
+    private modifierPayload: string;
+    constructor(payload: string){
+        this.modifierPayload = payload;
     }
     execute(){
 
