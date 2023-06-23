@@ -1,6 +1,38 @@
 
 export const basicLayout = [
   {
+    text: '%',
+    commandType: 'number',
+  },
+  {
+    text: 'CE',
+    commandType: 'number',
+  },
+  {
+    text: 'C',
+    commandType: 'number',
+  },
+  {
+    text: '⌫',
+    commandType: 'operator',
+  },
+  {
+    text: '¹/ⲭ',
+    commandType: 'number',
+  },
+  {
+    text: 'ⲭ²',
+    commandType: 'number',
+  },
+  {
+    text: '²√ⲭ',
+    commandType: 'number',
+  },
+  {
+    text: '-',
+    commandType: 'number',
+  },
+  {
     text: '7',
     commandType: 'number',
   },

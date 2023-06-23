@@ -9,8 +9,8 @@ export const ButtonPanel: FunctionComponent<ButtonPanelProps> = ({
   buttonLayout,
 }) => {
   const mapLayoutToButtons = () => {
-    return buttonLayout.map(({ ...props }) =>
-      cloneElement(<CalculatorButton {...props} />)
+    return buttonLayout.map(({ ...props }, i) =>
+      cloneElement(<CalculatorButton key={i} {...props} />)
     );
   };
   return (

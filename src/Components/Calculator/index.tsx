@@ -4,20 +4,28 @@ import { CalculatorBody } from "../CalculatorBody";
 import { ButtonPanel } from "../ButtonPanel";
 import { basicLayout } from "../ButtonPanel/layouts";
 import { NumericalCommand } from '../../Commands/numerical-command';
-import { OperationalCommand } from "../../Commands/operational-command";
+//import { OperationalCommand } from "../../Commands/operational-command";
+import { Command } from "../../Interfaces/command";
 
 export const Calculator: FunctionComponent = () => {
     const [ currentEntryState, setCurrentEntry ] = useState(0);
-    const [ equationState, setEquationState ] = useState({});
+    //const [ equationState, setEquationState ] = useState({});
 
     const renderButtonLayoutWithCommands = useCallback(() => {
         return basicLayout.map(({text, commandType}) => ({
             text,
-            command: commandType === "number"
-                ? new NumericalCommand(parseInt(text), setCurrentEntry)
-                : new OperationalCommand(text, setEquationState)
+            command: determineCommand(commandType, text),
         }))
-    }, [basicLayout, setCurrentEntry, setEquationState])
+    }, []);
+
+    const determineCommand = (type: string, text: string): Command => {
+        switch(type){
+            case 'number':
+                return new NumericalCommand(parseInt(text), setCurrentEntry);
+            default:
+                return { execute: () => {} };
+        }
+    }
     return(
         <CalculatorBody>
             <CalculatorDisplay displayInput={currentEntryState.toString()} />
