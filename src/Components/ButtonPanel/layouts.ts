@@ -1,4 +1,3 @@
-
 export const basicLayout = [
   {
     text: '%',
@@ -14,7 +13,7 @@ export const basicLayout = [
   },
   {
     text: '⌫',
-    commandType: 'operator',
+    commandType: 'delete',
   },
   {
     text: '¹/ⲭ',
@@ -87,7 +86,6 @@ export const basicLayout = [
   {
     text: '0',
     commandType: 'number',
-    
   },
   {
     text: '.',

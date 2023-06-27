@@ -1,14 +1,16 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from 'react';
 import styles from './index.module.scss';
 
-
 type ScreenProps = {
-    displayInput?: string; 
-}
+  displayInput?: string;
+};
 
-export const CalculatorDisplay: FunctionComponent<ScreenProps> = ({displayInput = "" }) => {
-
-    return(
-        <div className={styles.calcDisplay} >{displayInput}</div>
-    )
-}
+export const CalculatorDisplay: FunctionComponent<ScreenProps> = ({
+  displayInput = '',
+}) => {
+  const formatInput = useCallback(() => {
+    const formatter = new Intl.NumberFormat('en-US');
+    return formatter.format(parseInt(displayInput));
+  }, [displayInput]);
+  return <div className={styles.calcDisplay}>{formatInput()}</div>;
+};
