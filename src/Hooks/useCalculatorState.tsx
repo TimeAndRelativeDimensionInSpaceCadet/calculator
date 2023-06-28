@@ -6,32 +6,35 @@ export enum CalculatorActionType {
   CLEAR_LAST,
   NUMBER_ENTRY,
   OPERATOR,
-  EXECUTE
+  EXECUTE,
 }
 
-export type CalculatorState = {
-  currentEntry: string;
-  equationState?: string[];
-};
+
 
 export type EquationState = {
-    operator: OperatorMap
-
-}
+  operator: OperatorMap;
+  leftOperand: string;
+  rightOperand: string;
+};
 
 export enum OperatorMap {
-    NONE,
-    SUBTRACTION,
-    ADDITION,
-    MULTIPLICATION,
-    DIVISION,
-    SQRT,
-    SQRD
+  NONE = '',
+  SUBTRACTION = '-',
+  ADDITION = '+',
+  MULTIPLICATION = '*',
+  DIVISION = '/',
+  SQRT = 'sqrt()',
+  SQRD = '^2',
 }
 
 export type CalculatorAction = {
   payload: string;
   type: CalculatorActionType;
+};
+
+export type CalculatorState = {  
+    currentEntry: string;
+    equationState?: EquationState;
 };
 
 export type DispatchAction = (
@@ -62,7 +65,7 @@ export const useCalculatorState = (initialState: string) => {
         };
       case CalculatorActionType.NUMBER_ENTRY:
         return {
-          ...prevState,          
+          ...prevState,
           currentEntry: payload,
         };
     }
@@ -77,7 +80,7 @@ export const useCalculatorState = (initialState: string) => {
 
   const augmentedDispatch: Dispatch<DispatchAction> = useCallback(
     (action: DispatchAction) => action(dispatch, getState),
-    [dispatch, getState]
+    [getState]
   );
 
   return {

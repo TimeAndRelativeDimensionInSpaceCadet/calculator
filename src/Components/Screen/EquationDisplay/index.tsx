@@ -1,19 +1,20 @@
 import { FunctionComponent, useCallback } from 'react';
+import { OperatorMap } from '../../../Hooks/useCalculatorState';
 
 type EquationProps = {
-  left: string;
-  operator: string;
-  right: string;
+  leftOperand: string;
+  operator: OperatorMap;
+  rightOperand: string;
 };
 
 export const EquationDisplay: FunctionComponent<EquationProps> = ({
-  left = '',
+  leftOperand = '',
   operator = '',
-  right = '',
+  rightOperand = '',
 }) => {
   const constructEquationOutput = useCallback(
-    () => `${left}${operator}${right}`,
-    [left, operator, right]
+    () => `${leftOperand}${operator}${rightOperand}`,
+    [leftOperand, operator, rightOperand]
   );
   return <div>{constructEquationOutput()}</div>;
 };

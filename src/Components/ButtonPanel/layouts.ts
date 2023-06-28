@@ -1,3 +1,5 @@
+import { OperatorMap } from '../../Hooks/useCalculatorState';
+
 export const basicLayout = [
   {
     text: '%',
@@ -28,8 +30,9 @@ export const basicLayout = [
     commandType: 'number',
   },
   {
-    text: '-',
-    commandType: 'number',
+    text: '/',
+    commandType: 'operator',
+    operatorType: OperatorMap.DIVISION,
   },
   {
     text: '7',
@@ -44,8 +47,9 @@ export const basicLayout = [
     commandType: 'number',
   },
   {
-    text: 'x',
+    text: '×',
     commandType: 'operator',
+    operatorType: OperatorMap.MULTIPLICATION,
   },
   {
     text: '4',
@@ -61,7 +65,8 @@ export const basicLayout = [
   },
   {
     text: '-',
-    commandType: 'number',
+    commandType: 'operator',
+    operatorType: OperatorMap.SUBTRACTION,
   },
   {
     text: '1',

@@ -1,18 +1,18 @@
-import { Dispatch } from "react";
-import { Command } from "../Interfaces/command";
-import { DispatchAction } from "../Hooks/useCalculatorState";
+import { Dispatch } from 'react';
+import { Command } from '../Interfaces/command';
+import { DispatchAction, OperatorMap } from '../Hooks/useCalculatorState';
 
 export class OperationalCommand implements Command {
-    private operatorPayload: string;
-    private stateHandler: Dispatch<DispatchAction>;
-    constructor(payload: string, handler: Dispatch<DispatchAction>){
-        this.operatorPayload = payload;
-        this.stateHandler = handler;
-    }
+  private operatorType: OperatorMap;
+  private stateHandler: Dispatch<DispatchAction>;
 
-    execute(){
+  constructor(operator: OperatorMap, handler: Dispatch<DispatchAction>) {
+    this.operatorType = operator;
+    this.stateHandler = handler;
+  }
 
-    }
-
-    
+  
+  execute = () => {
+    console.log(this.operatorType);
+  }
 }

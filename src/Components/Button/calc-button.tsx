@@ -8,8 +8,7 @@ export type CalculatorButtonProps = {
 };
 export const CalculatorButton: FunctionComponent<CalculatorButtonProps> = ({
   text,
-  command,
-  
+  command,  
 }) => {
   const handleCommand = (): void => {
     command.execute();
